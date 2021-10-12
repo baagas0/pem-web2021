@@ -40,8 +40,7 @@ Clone repository https://github.com/baagas0/pem-web2021.git dan folder mingguan 
 1. Open the terminal, navigate to your directory (htdocs or www or public_html).
 ```bash
 git clone https://github.com/baagas0/pem-web2021.git
-cd course
-composer install
+cd pem-web2021
 ```
 
 2. Pointing to weekly folder progress
