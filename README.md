@@ -47,11 +47,13 @@ cd pem-web2021
 
 3. Open index file
 
+3. Dont forget to run with apache for running javascript
+
 ### To Do List
 
 - [x] Minggu 1: Tes upload github
 - [x] Minggu 2: Build dinus student biodata with html5
-- [ ] Minggu 3:
+- [x] Minggu 3: Add customize preloader & some section
 - [ ] Minggu 4:
 - [ ] Minggu 5:
 - [ ] Minggu 6:
