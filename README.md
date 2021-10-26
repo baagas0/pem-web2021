@@ -54,7 +54,7 @@ cd pem-web2021
 - [x] Minggu 1: Tes upload github
 - [x] Minggu 2: Build dinus student biodata with html5
 - [x] Minggu 3: Add customize preloader & some section
-- [ ] Minggu 4:
+- [x] Minggu 4: Form Training
 - [ ] Minggu 5:
 - [ ] Minggu 6:
 
