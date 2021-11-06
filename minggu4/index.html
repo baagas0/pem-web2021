@@ -22,7 +22,7 @@
     <title>Form PPDF</title>
   </head>
   <body style="background-color: #F3F1EC;font-family: 'Open Sans';">
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="loader">
             <div class="loader-outter"></div>
             <div class="loader-inner"></div>
@@ -34,7 +34,7 @@
                 </svg>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="container" style="padding:15;min-height: 700px;">
         <center>
@@ -75,13 +75,17 @@
                     <option value="Perempuan">Perempuan</option>
                 </select>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <label for="tempat_lahir" class="form-label">Tempat Lahir</label>
                 <input type="text" class="form-control" id="tempat_lahir">
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <label for="tanggal_lahir" class="form-label">Tanggal Lahir</label>
                 <input type="date" class="form-control" id="tanggal_lahir">
+            </div>
+            <div class="col-md-2">
+                <label for="umur" class="form-label">Umur Anda</label>
+                <input type="text" class="form-control" id="umur" readonly>
             </div>
             <div class="col-md-12 mt-0">
                 <small class="text-danger">* Foto Copy Akte Kelahiran Yang Telah Dilegalisir (Di Lampirkan)</small>
@@ -177,22 +181,26 @@
     <!-- Optional JavaScript; choose one of the two! -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" integrity="sha512-qzrZqY/kMVCEYeu/gCm8U2800Wz++LTGK4pitW/iswpCbjwxhsmUwleL1YXaHImptCHG0vJwU7Ly7ROw3ZQoww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <!-- <script src="../bootstrap-core/js/bootstrap.bundle.min.js"></script> -->
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    
-    <!-- <script src="../bootstrap-core/js/bootstrap.min.js" ></script> -->
     
     <script>
         $(document).ready(function() {
-            setTimeout(function(){ 
-                $('.preloader').addClass('preloader-deactivate');
-                setTimeout(function(){ 
-                    $('#modal_profile_udinus').modal('show');
-                }, 0);
-            }, 0);
+            // setTimeout(function(){ 
+            //     $('.preloader').addClass('preloader-deactivate');
+            //     setTimeout(function(){ 
+            //         $('#modal_profile_udinus').modal('show');
+            //     }, 0);
+            // }, 0);
+
+            $('#tanggal_lahir').on('change', function() {
+                var e = $(this).val();
+                
+                var today = new Date().getFullYear();
+                var birthDate = new Date(e).getFullYear();
+                 
+                var age = today - birthDate;
+                
+                $('#umur').val(`${age} Tahun`);
+            });
 
             $('#submitButton').on('click', function() {
                 const swalWithBootstrapButtons = Swal.mixin({
