@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Bootstrap CSS -->
+		<link href="../bootstrap-core/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+			body {
+				margin-top:20px;
+			}
+		</style>
+		<title>Perhitungan</title>
+  	</head>
+  	<body style="background-color: #F3F1EC;font-family: 'Open Sans';">
+
+		<div class="container text-center" style="padding:15;min-height: 700px;border: solid 1px;">
+			<div class="pt-3"></div>
+			<button class="btn btn-danger" id="min-button" onclick="operate('min')" disabled>-</button>
+			<button class="btn btn-primary" id="add-button" onclick="operate('add')">+</button>
+			<h4 class="text-bold" id="current-value">0</h4>
+		</div>
+
+	</body>
+</html>
+<!-- Javascript JQUERY LIB! -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" integrity="sha512-qzrZqY/kMVCEYeu/gCm8U2800Wz++LTGK4pitW/iswpCbjwxhsmUwleL1YXaHImptCHG0vJwU7Ly7ROw3ZQoww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+	function operate(type = 'add'){
+		var currenValue = $('#current-value');
+		var value = parseInt(currenValue.text());
+		var calc = 0;
+
+		if(type == 'add'){
+			calc = value + 1;
+		}else if(type == 'min'){
+			calc = value - 1;
+		}else {
+			alert(`Calc error: H4 ${type}`);
+		}
+
+		currenValue.text(calc);
+		if(calc <= 0){
+			$('#min-button').attr('disabled', true);
+		}else{
+			$('#min-button').attr('disabled', false);
+		}
+	}
+</script>
